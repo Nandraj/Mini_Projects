@@ -21,7 +21,7 @@ def showFolderTree(path, show_files=False, indentation=2, file_output=False):
             tree.append('{}{}/'.format(indent, os.path.basename(root)))
 
     if show_files:
-        for root, dirs, files in os.walk(path):
+        for root, _, files in os.walk(path):
             level = root.replace(path, '').count(os.sep)
             indent = ' '*indentation*(level)
             tree.append('{}{}/'.format(indent, os.path.basename(root)))
